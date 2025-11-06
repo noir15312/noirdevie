@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NOIR D' VIE</title>
+  <meta name="description" content="NOIR D' VIE — luxury fashion for the Sport Elite, the rich and Famous" />
+  <style>
+    html,body{
+      height:100%;margin:0;
+      font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+      background:#000 url('images/thumbnail_IMG_1432.jpg') no-repeat center center fixed;
+      background-size:cover;
+      color:#fff;
+      display:flex;align-items:center;justify-content:center;
+      text-align:center;
+      overflow:hidden;
+    }
+    .overlay{
+      background:rgba(0,0,0,0.7);
+      position:absolute;top:0;left:0;right:0;bottom:0;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .content{
+      z-index:1;max-width:760px;width:90%;
+      padding:30px;border-radius:12px;
+      animation: fadeIn 2s ease forwards;
+    }
+    h1{
+      margin:0 0 10px 0;font-size:42px;letter-spacing:2px;font-weight:700;
+      text-shadow:0 0 10px rgba(255,255,255,0.6), 0 0 20px rgba(255,255,255,0.4);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    p.lead{
+      margin:10px 0 24px 0;
+      color:rgba(255,255,255,0.85);
+      font-size:18px;
+      animation: fadeIn 3s ease forwards;
+    }
+    input.code{
+      padding:10px 14px;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,0.3);
+      background:rgba(255,255,255,0.1);
+      color:#fff;
+      text-align:center;
+      width:260px;
+      font-size:15px;
+      outline:none;
+      transition:border .2s, background .2s;
+    }
+    input.code:focus{border-color:#fff;background:rgba(255,255,255,0.2);}
+    .message{
+      margin-top:20px;
+      font-size:16px;
+      color:rgba(255,255,255,0.9);
+      opacity:0;
+      transform:translateY(10px);
+      transition:opacity 0.8s ease, transform 0.8s ease;
+    }
+    .message.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+    footer{
+      position:fixed;left:0;right:0;bottom:10px;text-align:center;
+      color:rgba(255,255,255,0.6);font-size:13px;
+      text-shadow:0 0 6px rgba(255,255,255,0.3);
+      animation: fadeIn 4s ease forwards;
+    }
+    select{
+      background:rgba(255,255,255,0.1);
+      border:1px solid rgba(255,255,255,0.3);
+      color:white;border-radius:6px;
+      padding:6px 10px;margin-left:8px;font-size:13px;cursor:pointer;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px rgba(255,255,255,0.6), 0 0 20px rgba(255,255,255,0.4); }
+      to { text-shadow: 0 0 20px rgba(255,255,255,0.9), 0 0 40px rgba(255,255,255,0.6); }
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="content">
+      <h1>NOIR D' VIE</h1>
+      <p class="lead">Fashion exclusive for the Sport Elite, the Rich and Famous</p>
+      <p class="lead">Insert your personal invitation code below</p>
+
+      <input id="exclusiveCode" class="code" type="text" placeholder="Insert your exclusive code" oninput="showMessage()" />
+
+      <div id="msg" class="message">Your exclusive code has been registered. Please contact us at <a href="mailto:info@noirdevie.com" style="color:#fff;text-decoration:underline">info@noirdevie.com</a></div>
+    </div>
+  </div>
+
+  <footer>
+    NOIR D' VIE —
+    <label for="language">Language:</label>
+    <select id="language" name="language">
+      <option value="en" selected>English</option>
+      <option value="pt">Português</option>
+      <option value="fr">Français</option>
+      <option value="es">Español</option>
+      <option value="it">Italiano</option>
+      <option value="de">Deutsch</option>
+      <option value="zh">中文 (Chinese)</option>
+      <option value="ja">日本語 (Japanese)</option>
+      <option value="ar">العربية (Arabic)</option>
+      <option value="ru">Русский (Russian)</option>
+      <option value="hi">हिन्दी (Hindi)</option>
+      <option value="ko">한국어 (Korean)</option>
+      <option value="tr">Türkçe (Turkish)</option>
+      <option value="nl">Nederlands (Dutch)</option>
+      <option value="sv">Svenska (Swedish)</option>
+      <option value="pl">Polski (Polish)</option>
+      <option value="he">עברית (Hebrew)</option>
+      <option value="el">Ελληνικά (Greek)</option>
+      <option value="th">ไทย (Thai)</option>
+      <option value="vi">Tiếng Việt (Vietnamese)</option>
+      <option value="id">Bahasa Indonesia</option>
+      <option value="fa">فارسی (Farsi)</option>
+      <option value="uk">Українська (Ukrainian)</option>
+      <option value="no">Norsk (Norwegian)</option>
+      <option value="da">Dansk (Danish)</option>
+      <option value="fi">Suomi (Finnish)</option>
+      <option value="cs">Čeština (Czech)</option>
+      <option value="hu">Magyar (Hungarian)</option>
+      <option value="ro">Română (Romanian)</option>
+    </select>
+  </footer>
+
+  <script>
+    function showMessage(){
+      const msg = document.getElementById("msg");
+      const code = document.getElementById("exclusiveCode").value.trim();
+      if(code.length > 0){
+        msg.classList.add("show");
+      } else {
+        msg.classList.remove("show");
+      }
+    }
+  </script>
+</body>
+</html>
